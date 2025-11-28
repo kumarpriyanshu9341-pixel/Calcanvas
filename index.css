@@ -1,0 +1,155 @@
+/* Base Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Heading */
+h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Mic Button */
+#micButton {
+    background: #1f1f1f;
+    color: #ffffff;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+    transition: all 0.4s ease;
+    animation: pulse 2s infinite;
+}
+
+#micButton:hover {
+    background: #00d2ff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Animation Area */
+#animationArea {
+    margin-top: 30px;
+}
+
+#micAnimation, #speakerAnimation {
+    width: 120px;
+    filter: drop-shadow(0 0 10px cyan);
+    animation: vibrate 0.5s infinite;
+}
+
+/* Loader Spinner */
+.loader {
+    margin-top: 20px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #00d2ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Light Theme */
+.light-theme {
+    background: linear-gradient(135deg, #f6f8f9, #e0eafc);
+}
+
+.light-theme .container {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.light-theme h1, .light-theme #micButton {
+    color: #333;
+}
+
+.light-theme #micButton {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#themeButton {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #ffffff20;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#themeButton:hover {
+    background: #00d2ff;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #micButton {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+
+    #micAnimation, #speakerAnimation {
+        width: 90px;
+    }
+}
